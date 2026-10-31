@@ -1,0 +1,34 @@
+{
+  "Netflix": {
+    "steps": [
+      "Go to netflix.com/youraccount and sign in.",
+      "Under the 'Membership & Billing' section, click the 'Cancel Membership' button.",
+      "Follow the prompts to confirm your cancellation."
+    ],
+    "link": "https://www.netflix.com/youraccount"
+  },
+  "Spotify Premium": {
+    "steps": [
+      "Log in to your account page at spotify.com/account.",
+      "Under 'Your plan', click 'CHANGE PLAN'.",
+      "Scroll to 'Spotify Free' and click 'CANCEL PREMIUM'."
+    ],
+    "link": "https://www.spotify.com/account"
+  },
+  "Tinder Gold": {
+    "steps": [
+      "Open Tinder app, tap profile icon, go to Settings.",
+      "Scroll to 'Manage Payment Account' or click Subscriptions.",
+      "Tap 'Cancel Subscription'."
+    ],
+    "link": "https://tinder.com"
+  },
+  "Claude Pro": {
+    "steps": [
+      "Log in to claude.ai and open Settings.",
+      "Go to the Billing section.",
+      "Click on 'Cancel subscription' and confirm."
+    ],
+    "link": "https://claude.ai"
+  }
+}

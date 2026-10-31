@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SubSlash — AI Subscription Killer</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="background:#eef2ff;color:#3730a3;font-size:12px;padding:6px 12px;display:flex;justify-content:center;align-items:center;gap:8px;border-bottom:1px solid #c7d2fe;text-align:center;" role="note"><span>Live AI backend: set GEMINI_API_KEY for real scans, or use sample data for a demo.</span><button type="button" id="dismiss-banner" aria-label="Dismiss" style="background:none;border:none;cursor:pointer;font-size:14px;line-height:1;color:inherit;">×</button></div>
+  <div class="glass-bg"></div>
+
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">💸</span>
+        <h1>SubSlash</h1>
+      </div>
+      <p class="subtitle">Scan bank statements, automatically identify hidden subscriptions, and cancel them in seconds.</p>
+    </header>
+
+    <!-- Main Dashboard Metrics -->
+    <section class="kpis">
+      <div class="kpi-card">
+        <span class="kpi-label">TOTAL SPENT / MO</span>
+        <span class="kpi-value" id="kpi-total-spent">$0.00</span>
+      </div>
+      <div class="kpi-card danger">
+        <span class="kpi-label">DETECTED SUBS</span>
+        <span class="kpi-value" id="kpi-detected-count">0</span>
+      </div>
+      <div class="kpi-card success">
+        <span class="kpi-label">CANCELLED SAVINGS</span>
+        <span class="kpi-value" id="kpi-savings">$0.00</span>
+      </div>
+    </section>
+
+    <main class="dashboard-grid">
+      <!-- Left Panel: Drag-and-drop Statement Scan -->
+      <section class="panel upload-panel">
+        <h3>Upload Statement / Purchase History</h3>
+        <p class="section-desc">Drop a PDF, CSV, or TXT bank statement — AI detects the recurring subscriptions.</p>
+
+        <div class="drop-zone" id="drop-zone">
+          <div class="drop-zone-content">
+            <span class="upload-icon">📥</span>
+            <p class="drop-text">Drag & drop bank statement here, or click to upload</p>
+            <span class="file-info" id="file-info">Supports PDF, CSV, or TXT (max 5MB)</span>
+          </div>
+          <input type="file" id="file-input" class="hidden-input" accept=".pdf,.csv,.txt,application/pdf,text/plain,text/csv">
+        </div>
+
+        <div class="paste-container">
+          <label for="statement-text">Or paste statement text</label>
+          <textarea id="statement-text" rows="4" placeholder="Paste bank statement lines, e.g.&#10;NETFLIX.COM 15.49&#10;SPOTIFY USA 10.99"></textarea>
+          <button id="btn-scan-text" class="btn btn-primary">Scan pasted text</button>
+        </div>
+
+        <div class="scan-error hidden" id="scan-error" role="alert"></div>
+
+        <div class="scanner-loader hidden" id="scanner-loader">
+          <div class="loader-line"></div>
+          <p>AI scanning statement for recurring subscriptions...</p>
+        </div>
+
+        <div class="sample-btn-container">
+          <button id="btn-load-sample" class="btn btn-secondary">Try sample data (no backend needed)</button>
+        </div>
+      </section>
+
+      <!-- Right Panel: Subscriptions List -->
+      <section class="panel list-panel">
+        <h3>Identified Subscriptions</h3>
+        
+        <div class="subs-list" id="subs-list">
+          <div class="empty-state">
+            <p>Upload a statement to detect recurring subscriptions.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Cancellation details Modal/Drawer -->
+    <div class="cancel-modal hidden" id="cancel-modal">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h3 id="modal-sub-name">Cancel Subscription</h3>
+          <button class="close-btn" id="modal-close">×</button>
+        </header>
+        <div class="modal-body">
+          <p class="sub-cost-line">Cost: <strong id="modal-sub-cost">$0.00/mo</strong></p>
+          <div class="cancellation-guide">
+            <h4>💡 Step-by-Step Cancellation Guide:</h4>
+            <ol id="modal-steps-list">
+              <!-- JS Injected -->
+            </ol>
+          </div>
+          <div class="modal-actions">
+            <a href="#" target="_blank" class="btn btn-primary" id="modal-cancel-link">Go to Cancellation Page</a>
+            <button class="btn btn-secondary" id="modal-mark-done">Mark as Cancelled</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
