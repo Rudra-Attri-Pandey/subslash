@@ -4,14 +4,14 @@
   --surface: rgba(22, 28, 45, 0.4);
   --surface-hover: rgba(22, 28, 45, 0.6);
   --border: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(139, 92, 246, 0.5);
+  --border-focus: rgba(76, 23, 243, 0.5);
   --fg: #f3f4f6;
   --muted: #9ca3af;
 
-  --accent: #8b5cf6;
-  --accent-hover: #7c3aed;
-  --accent-glow: rgba(139, 92, 246, 0.25);
-  --danger: #ef4444;
+  --accent: #4c17f3;
+  --accent-hover: #3b0bd1;
+  --accent-glow: rgba(76, 23, 243, 0.25);
+  --danger: #ae405e;
   --success: #10b981;
 
   --font-heading: 'Outfit', sans-serif;
@@ -47,8 +47,8 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(239, 68, 68, 0.08) 0%, transparent 45%);
+    radial-gradient(circle at 10% 20%, rgba(76, 23, 243, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(174, 64, 94, 0.08) 0%, transparent 45%);
   z-index: -1;
   pointer-events: none;
 }
@@ -192,7 +192,7 @@ body {
 
 .drop-zone:hover {
   border-color: var(--accent);
-  background: rgba(139, 92, 246, 0.03);
+  background: rgba(76, 23, 243, 0.03);
 }
 
 .drop-zone-content {
@@ -361,9 +361,9 @@ body {
 }
 
 .sub-status.active {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(174, 64, 94, 0.1);
   color: var(--danger);
-  border: 1px solid rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(174, 64, 94, 0.2);
 }
 
 .sub-status.cancelled {
@@ -544,8 +544,8 @@ body {
   font-size: 0.85rem;
   line-height: 1.5;
   color: #fca5a5;
-  background: rgba(239, 68, 68, 0.08);
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  background: rgba(174, 64, 94, 0.08);
+  border: 1px solid rgba(174, 64, 94, 0.25);
   border-radius: var(--radius-sm);
   padding: 0.75rem 1rem;
 }
