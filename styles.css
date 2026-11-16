@@ -553,3 +553,7 @@ body {
 .scan-error.hidden {
   display: none;
 }
+
+/* Palette roles - periwinkle secondary text, forest success rail */
+.kpi-label { color: rgba(153, 173, 220, 0.92); }
+.sub-status { border-left: 3px solid rgba(19, 94, 67, 0.9); }
