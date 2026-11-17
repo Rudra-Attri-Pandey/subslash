@@ -30,7 +30,7 @@
 }
 
 body {
-  background-color: var(--bg);
+  background: linear-gradient(rgba(7,9,19,0.72), rgba(7,9,19,0.72)), linear-gradient(135deg, #4C17F3 0%, #99ADDC 33%, #135E43 66%, #AE405E 100%); background-attachment: fixed;
   color: var(--fg);
   font-family: var(--font-body);
   min-height: 100vh;
